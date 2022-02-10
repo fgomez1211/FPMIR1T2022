@@ -1,18 +1,12 @@
-
-from hashlib import new
 import webbrowser
 
-Num =input("Ingrese la semana")          #Ingresar el número de semana y se almacena en la variable Num
+SemanaN =input("Ingrese la semana:")    #Ingresar el número de semana en formato: "Semana+N".
 
 
-def GetHomework(SemanaN):               #Definición de la función GetHomework con el parámetro "SemanaN"
-    return(f"Semana{SemanaN}")
+def GetHomework(SemanaN):               #Definición de la función GetHomework con el parámetro "SemanaN".
+    return(SemanaN)
     
-GetHomework(Num)                        #Ejecución de la función GetHomwork con "Num"
 
-Semana = str(GetHomework(Num))          
-link = "https://fpmir.azurewebsites.net/api/AZFMIR?AZFNUM="
+homework = "https://fpmir.azurewebsites.net/api/AZFMIR?AZFNUM="+GetHomework(SemanaN)    #Declaración y concatenación.
 
-homework = link+Semana                  #Concatenación en variable "homework"
-
-webbrowser.open(homework, new=2)        #Ejecución de interfaz webbrowser.2
+webbrowser.open(homework, new=2)        #Ejecución de interfaz webbrowser.
