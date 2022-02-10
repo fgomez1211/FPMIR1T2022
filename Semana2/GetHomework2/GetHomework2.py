@@ -1,6 +1,5 @@
 
 
-
 import json, requests, os                                       #Importación de librerias, json, requests y os para FilePath
 
 
@@ -16,6 +15,8 @@ json.dump(response_info, out_file, indent=6)
 out_file.close()
 
 
-#Como el FilePath no es de Windows, busque una solución para OSX y encontré open(os.path.expanduser())
-#El FilePath utilizado de prueba es: 
-#Espero sea igual de válido.
+'''
+Como el FilePath no es de Windows (No me dejo utilizar el doble //), busque una solución para OSX y encontré open(os.path.expanduser())
+El FilePath utilizado de prueba es:  /Users/fernandogomez/Dropbox/Fernando Gómez/URL/Maestría/1T/Introducción a la Programación/GitHub/FPMIR1T2022/Tareas/SemanaX.json
+Espero sea igual de válido.
+'''
