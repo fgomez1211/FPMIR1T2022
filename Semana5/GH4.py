@@ -29,14 +29,15 @@ def GetHomework(SemanaN,FilePath):
         
 
 InputSemana = input("Ingrese semanas: ")
-#Parte IV
-
 InputFile = input("Ingrese\ path y nombre de archivo: ")
 #Verificación del Filepath
 if(os.path.isdir(os.path.dirname(InputFile))==False):
     print("El path ingresado:", os.path.dirname(InputFile),"No se encuentra, ingrese un path adecuado.")
 else:
     GetHomework(InputSemana,InputFile)
+
+
+
 
 """
 Mensaje = input("Ingrese el mensaje del Commit: ")

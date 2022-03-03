@@ -1,5 +1,6 @@
-"""
+
 #Conteo de digitos
+
 Num1=int(input("Escriba un numero:"))
 ConteoDigitos=0
 Numero=Num1
@@ -11,6 +12,7 @@ print("El numero:", Num1, "tiene los siguientes digitos:", ConteoDigitos)
 
 
 #Conteo de numeros pares
+"""
 Num1=int(input("Escriba un numero:"))
 Listado=list(range(1,Num1+1))
 ContadorPares=0
@@ -22,9 +24,11 @@ for i in Listado:
         ContadorImpares+=1
 print("El contador de numeros pares es: ", ContadorPares)
 print("El contador de numeros impares es: ", ContadorImpares)
+"""
 
 
 #Numeros primos ciclos break
+"""
 Num1=int(input("Escriba un numero1: "))
 Num2=int(input("Escriba un numero2: "))
 for i in range(Num1, Num2+1):              #Aquí tenemos el rango de numeros a evaluar
@@ -33,6 +37,7 @@ for i in range(Num1, Num2+1):              #Aquí tenemos el rango de numeros a 
             break
     else:
         print("Encontre el numero primo:",i)
+"""
 
 
 
@@ -48,20 +53,18 @@ for i in range(Num1, Num2+1):              #Aquí tenemos el rango de numeros a 
 
 
 #Suma de numeros no recursivo
-
-
+"""
 Num1=int(input("Escriba un numero: "))
 Sumatoria=0
 for i in range(1,Num1+1):
     Sumatoria+=i
 print("La suma de los numeros de 1 a",Num1,"es de:",Sumatoria)
-
-
 """
 
 
 
 #Sumatoria recursiva
+"""
 Num1=int(input("Escriba un numero: "))
 def SumatoriaRecursiva(Num1):
     if(Num1==1):
@@ -70,5 +73,5 @@ def SumatoriaRecursiva(Num1):
         return Num1+SumatoriaRecursiva(Num1-1)
 
 print("La suma de los numeros 1 hasta",Num1,"es de:",SumatoriaRecursiva(Num1))
-
+"""
 
