@@ -8,37 +8,51 @@ from SubirArchivosGitHub import SubirGitHub
 
 #Esta funcion devuelve la tarea de la semana al recibir el numero de semana como parametro
 def GetHomework(SemanaN,FilePath):
-    #Parte I
-  
-  for x in range(1,Numero+1):
-    SemanaN="Semana"+str(x)
-    FilePath=Direccion+"/Semana"+str(x)+".json"
-
-    Enlace="https://fpmir.azurewebsites.net/{}/AZFMIR?AZFNUM={}".format("api",SemanaN)
-    webbrowser.open(Enlace, new=2)
-    #Parte II
-    response=requests.get(Enlace).text
-    archivo=open(FilePath, "w")
     
-    if(response=="El key introducido es invalido o aun no esta disponible"):
-        print("No hay contenido disponible para esta semana")
-        break
-    else:
+
+    for x in range(1,Numero+1):
+        SemanaN="Semana"+str(x)                                           #Aquí vuelvo a concatenar SemanaN y FilePath para correr el ciclo for.
+        FilePath=Direccion+"/Semana"+str(x)+".json"
+        Enlace="https://fpmir.azurewebsites.net/{}/AZFMIR?AZFNUM={}".format("api",SemanaN)
+        webbrowser.open(Enlace, new=2)
+        #Parte II
+        response=requests.get(Enlace).text
+    
+        if(response=="El Key introducido es invalido o aun no esta disponible"):
+            print("No hay contenido disponible para esta semana")
+            print("Se han grabado correctamente los archivos hasta la semana:",str(x-1))
+            exit()
+
         try:
             response_info=json.loads(response)
+
         except:
-            print("El contenido de la",SemanaN, "no se encuentra en un formato json valido")
-            break
-        finally:
-            json.dump(response_info,archivo,indent=6)
+            print("No se puede modificar el archivo")
+        else:
+            archivo=open(FilePath, "w")
+            json.dump(response_info,archivo,indent=6)      
             print("Se almaceno exitosamente al archivo:", FilePath)
-            archivo.close()
+        finally:  
+            if(x==SemanaN):
+                print("Se han descargado",SemanaN,"Semanas de forma exitosa")
+        archivo.close()
             
      
-
+#Aquí pido solo el numero de semanas y el path, sin el nombre del archivo.
 Numero=int(input("Ingrese el numero de semanas: "))
 Direccion=input("Ingrese Path: ")
-GetHomework(Numero,Direccion)
+
+if(os.path.isdir(os.path.dirname(Direccion))==False):
+    print("El path ingresado:", os.path.dirname(Direccion),"No se encuentra, ingrese un path adecuado.")
+    exit()
+else:
+    GetHomework(Numero,Direccion)
+
+
+
+    
+
+
 
 
 
@@ -46,15 +60,10 @@ GetHomework(Numero,Direccion)
 
 """
 
+
+
 #Parte IV
-
-
 #Verificación del Filepath
-if(os.path.isdir(os.path.dirname(InputFile))==False):
-    print("El path ingresado:", os.path.dirname(InputFile),"No se encuentra, ingrese un path adecuado.")
-else:
-    GetHomework(InputSemana,InputFile)
-
 
 Mensaje = input("Ingrese el mensaje del Commit: ")
 TokenGithub = input("Ingrese Token para autenticarse a GitHub: ")

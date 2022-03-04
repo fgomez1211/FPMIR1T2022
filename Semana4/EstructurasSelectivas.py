@@ -73,7 +73,7 @@ else:
 """
 
 #Switches
-"""
+
 Num1=int(input("ingrese numero de dia de la semana:"))
 DiasSemana={
     1:"Lunes",
@@ -85,7 +85,7 @@ DiasSemana={
     7:"Domingo"
 }
 print("El dia de la semana para el numero",Num1,"es:",DiasSemana.get(Num1,"No es un dia de la semana"))
-"""
+
 
 #Excepciones
 """
@@ -100,7 +100,7 @@ else:
     print("No hubieron errores")
 """
 
-
+"""
 archivo=open("/Users/fernandogomez/Dropbox/Fernando Gómez/URL/Maestría/1T/Introducción a la Programación/Test.txt","w")
 try:
     archivo.write("Test 2")
@@ -111,3 +111,4 @@ else:
 finally:
     archivo.close()
     print("Se cerro el archivo exitosamente")
+"""
