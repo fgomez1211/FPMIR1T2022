@@ -12,11 +12,12 @@ def Opcion3():
                 file = open(FilePath,"w")
                 file.write(texto)
 
-        except FileNotFoundError:
-                mensaje= "El filepath ingresado",FilePath," es invalido:"
-                print(mensaje)
-
+        except:
+                print("Ocurrió un error al crear el archivo.")
         else:
                 file.close()
+
+        finally:
                 print ("El archivo se ha cerrado exitosamente.")
                 print("")
+

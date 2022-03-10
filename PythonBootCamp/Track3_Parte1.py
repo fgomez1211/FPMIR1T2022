@@ -15,13 +15,12 @@ while menuprincipal != 4:
     if menuprincipal == 1:
 
         actual= datetime.now()
-
         print("La fecha y hora actual es: ",actual)
         print("")
 
     elif menuprincipal == 2:
         sitioweb="https://www.github.com"
-        webbrowser.open(sitioweb, new=2, autoraise=True)
+        webbrowser.open(sitioweb, new=2)
 
     elif menuprincipal == 3:
         texto=input("Ingrese el texto a almacenar: ")

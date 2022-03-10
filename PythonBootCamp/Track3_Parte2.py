@@ -11,6 +11,7 @@ from Opcion4 import Opcion4
 
 
 menuprincipal = int(input("Menu principal: \n 1- Fecha y hora actual \n 2- Abrir GitHub. \n 3- Guardar un archivo. \n 4- Salir. \n "))
+
 while menuprincipal != 4:
 
     if menuprincipal == 1:
