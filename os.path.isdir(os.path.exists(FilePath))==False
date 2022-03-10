@@ -1,0 +1,1 @@
+os.path.isdir(os.path.exists(FilePath))==False
