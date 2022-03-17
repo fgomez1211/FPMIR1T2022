@@ -2,6 +2,7 @@
 #Track de Ciclos Python
 
 
+
 #Práctica No.1
 """
 Num1=int(input("Ingrese un numero: "))
@@ -96,5 +97,18 @@ print(inversion_cadena(cadena_i))
 """
 
 
+
+#Ejercicio 7 - Recursividad
+"""
+Cadena = input("Ingrese texto a invertir: ")
+def recursion(str):
+    if len(str) == 0:
+        return str
+    else:
+        return recursion(str[1:]) + str[0]
+
+print("Texto Original: ", Cadena)
+print("Texto Intvertido: ", recursion(Cadena))
+"""
 
 
